@@ -17,12 +17,12 @@ class App : Application() {
                 javaClass.getResource("${ u.pathPackage() }/view/main.fxml")
         )
 
-        primaryStage?.title = "Inicio Projeto"
+        primaryStage?.title = "Gera Rótulo - Mel Wenzel"
         primaryStage?.isResizable = false
         primaryStage?.scene = Scene(root)
-        // primaryStage?.icons?.addAll(
-        //         Image("${ u.pathPackage() }/view/assets/icon.png")
-        // )
+        primaryStage?.icons?.addAll(
+                Image("${ u.pathPackage() }/assets/icon.png")
+        )
         primaryStage?.show()
     }
 

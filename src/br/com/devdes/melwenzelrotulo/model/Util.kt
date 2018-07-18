@@ -28,7 +28,7 @@ class Util {
         return pathMainView
     }
 
-    // STRING PARA HASHMD5
+    // STRING PARA HASH MD5
     fun md5(string: String): String {
         val md = MessageDigest.getInstance("MD5")
         val digested = md.digest(string.toByteArray())
