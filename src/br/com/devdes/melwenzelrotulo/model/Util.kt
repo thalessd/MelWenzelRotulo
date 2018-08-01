@@ -18,6 +18,7 @@ class Util {
 
         pathMainView = pathSplited.joinToString(
                 separator = if (dotDiv) "." else "/",
+                prefix = if (dotDiv) "" else "/",
                 limit = lenghtPath - 1,
                 truncated = ""
         ).replace(
