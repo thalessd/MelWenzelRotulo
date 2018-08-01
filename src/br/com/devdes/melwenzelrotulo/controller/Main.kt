@@ -5,6 +5,6 @@ import br.com.devdes.melwenzelrotulo.model.Rotulo
 
 class Main {
     init {
-        Criar().pdfRotulo(Rotulo())
+        Criar().pdfRotulo(Rotulo(), "", true)
     }
 }

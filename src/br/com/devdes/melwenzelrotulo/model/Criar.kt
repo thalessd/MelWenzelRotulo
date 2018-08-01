@@ -43,7 +43,7 @@ class Criar {
     }
 
     private fun formataNumDecimal(float: Float) : String {
-        return DecimalFormat("##,###.00").format(float)
+        return DecimalFormat("##,##0.00").format(float)
     }
 
     private fun nomeArquivo(rotulo: Rotulo) : String {
