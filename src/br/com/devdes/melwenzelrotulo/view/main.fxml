@@ -36,7 +36,7 @@
                     <Insets bottom="2.0" fx:id="x3" />
                 </VBox.margin>
             </Label>
-            <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Quantidade de Rótulos para Impressão" VBox.vgrow="ALWAYS">
+            <TextField fx:id="tfQtdRotulo" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Quantidade de Rótulos para Impressão" VBox.vgrow="ALWAYS">
                 <VBox.margin>
                     <Insets bottom="4.0" />
                 </VBox.margin>
@@ -48,7 +48,7 @@
                             <Insets bottom="2.0" />
                         </VBox.margin>
                     </Label>
-                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Numeração do Lote" VBox.vgrow="ALWAYS">
+                    <TextField fx:id="tfLote" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Numeração do Lote" VBox.vgrow="ALWAYS">
                         <VBox.margin>
                             <Insets bottom="4.0" />
                         </VBox.margin>
@@ -57,7 +57,7 @@
 
                 <VBox HBox.hgrow="ALWAYS">
                     <Label text="Floração (Flowering):" VBox.margin="$x3" />
-                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Gênero de Floração" VBox.vgrow="ALWAYS">
+                    <TextField fx:id="tfFloracao" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Gênero de Floração" VBox.vgrow="ALWAYS">
                   <VBox.margin>
                      <Insets bottom="4.0" fx:id="x9" />
                   </VBox.margin></TextField>
@@ -68,7 +68,7 @@
             </HBox>
 
             <Label text="Data de Empacotamento (Date of Packing):" VBox.margin="$x3" />
-            <DatePicker minHeight="30.0" prefHeight="30.0" prefWidth="600.0" promptText="Data de Empacotamento">
+            <DatePicker fx:id="dpDataEmpacotamento" minHeight="30.0" prefHeight="30.0" prefWidth="600.0" promptText="Data de Empacotamento">
                 <VBox.margin>
                     <Insets bottom="4.0" />
                 </VBox.margin>
@@ -81,7 +81,7 @@
             <HBox>
                 <VBox HBox.hgrow="ALWAYS">
                     <Label text="Peso Bruto (Gross Weight):" VBox.margin="$x3" />
-                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Peso Bruto (Kg)" VBox.vgrow="ALWAYS">
+                    <TextField fx:id="tfPesoBruto" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Peso Bruto (Kg)" VBox.vgrow="ALWAYS">
                   <VBox.margin>
                      <Insets bottom="4.0" fx:id="x10" />
                   </VBox.margin></TextField>
@@ -92,7 +92,7 @@
                             <Insets bottom="2.0" />
                         </VBox.margin>
                     </Label>
-                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Peso Líquido (Kg)" VBox.vgrow="ALWAYS">
+                    <TextField fx:id="tfPesoLiquido" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Peso Líquido (Kg)" VBox.vgrow="ALWAYS">
                         <VBox.margin>
                             <Insets bottom="4.0" fx:id="x1" />
                         </VBox.margin>
@@ -111,7 +111,7 @@
                     <Insets bottom="2.0" />
                 </VBox.margin>
             </Label>
-            <DatePicker layoutX="10.0" layoutY="188.0" minHeight="30.0" prefHeight="30.0" prefWidth="600.0" promptText="Validade">
+            <DatePicker fx:id="dpValidade" layoutX="10.0" layoutY="188.0" minHeight="30.0" prefHeight="30.0" prefWidth="600.0" promptText="Validade">
                 <VBox.margin>
                     <Insets bottom="4.0" />
                 </VBox.margin>
@@ -122,12 +122,12 @@
                 </padding>
             </Separator>
             <HBox alignment="CENTER_LEFT">
-                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="24.0" text="Limpar Campos">
+                <Button fx:id="btnLimpaCampo" minHeight="-Infinity" mnemonicParsing="false" prefHeight="24.0" text="Limpar Campos">
                     <HBox.margin>
                         <Insets right="8.0" />
                     </HBox.margin>
                 </Button>
-              <CheckBox mnemonicParsing="false" text="Incluir Imagem de Fundo">
+              <CheckBox fx:id="cbImagemFundo" mnemonicParsing="false" text="Incluir Imagem de Fundo">
                   <font>
                       <Font size="16.0" fx:id="x6" />
                   </font>
@@ -143,16 +143,16 @@
             </VBox.margin>
         </Separator>
         <HBox alignment="CENTER_RIGHT" fillHeight="false" prefWidth="200.0" VBox.vgrow="SOMETIMES">
-         <Label prefHeight="27.0" prefWidth="216.0" text="Att. Thales Carvalho - 89 99988 9460">
+         <Label fx:id="lblDev" prefHeight="27.0" prefWidth="216.0" text="Att. Thales Carvalho - 89 99988 9460">
             <padding>
                <Insets right="8.0" />
             </padding>
          </Label>
-            <ProgressBar maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="35.0" progress="0.0" HBox.hgrow="SOMETIMES">
+            <ProgressBar fx:id="pbLoad" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="35.0" progress="0.0" HBox.hgrow="SOMETIMES">
             <HBox.margin>
                <Insets fx:id="x11" />
             </HBox.margin></ProgressBar>
-            <Button minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" text="Salvar Arquivo" HBox.hgrow="ALWAYS">
+            <Button fx:id="btnSalvarArquivo" minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" text="Salvar Arquivo" HBox.hgrow="ALWAYS">
                 <HBox.margin>
                     <Insets left="8.0" fx:id="x7" />
                 </HBox.margin>
