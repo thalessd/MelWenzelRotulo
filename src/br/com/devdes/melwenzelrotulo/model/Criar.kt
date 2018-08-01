@@ -7,6 +7,7 @@ import java.awt.Color
 import java.awt.Font
 import java.io.FileOutputStream
 import java.nio.file.Paths
+import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -29,10 +30,24 @@ class Criar {
     private val alinhamentoTopo = 273
     private val alinhamentoEsquerda = 16
 
-    private val dataPadrao = "dd/mm/yyyy"
+    private fun formataLote(int: Int) : String {
+        return int.toString().padStart(6, '0')
+    }
+
+    private fun formataDrum(int: Int) : String {
+        return int.toString().padStart(2, '0')
+    }
+
+    private fun formataData(date: Date, paraArquivo : Boolean = false) : String {
+        return SimpleDateFormat(if(!paraArquivo) "dd/mm/yyyy" else "dd-mm-yyyy-HH-mm-ss").format(date)
+    }
+
+    private fun formataNumDecimal(float: Float) : String {
+        return DecimalFormat("##,###.00").format(float)
+    }
 
     private fun nomeArquivo(rotulo: Rotulo) : String {
-        return "Rótulo - LOTE [${rotulo.lote}] - DATA DE CRIAÇÂO [${SimpleDateFormat("dd-mm-yyyy-HH-mm-ss").format(Date())}].pdf"
+        return "Rótulo - LOTE [${formataLote(rotulo.lote)}] - DATA DE CRIAÇÂO [${formataData(Date(), true)}].pdf"
     }
 
     private fun imagemBgParaAlinhamento(canvas : PdfContentByte) {
@@ -58,8 +73,6 @@ class Criar {
 
         val strings = listOf("Drum:", "Lot:", "Flowering:", "Date of Packing:")
 
-        val sdf = SimpleDateFormat(dataPadrao).format(datePacking)
-
         val espacoH = 4
         val espacoW = 4
 
@@ -74,10 +87,10 @@ class Criar {
 
         g2d.font = fonteNegritoCorpo
 
-        g2d.drawString(drum.toString(), alinhamentoEsquerda + espacoW + 31, alinhamentoTopo)
-        g2d.drawString(lot.toString(), alinhamentoEsquerda + espacoW + 19, alinhamentoTopo + fonteTamanhoInfo + espacoH)
+        g2d.drawString(formataDrum(drum), alinhamentoEsquerda + espacoW + 31, alinhamentoTopo)
+        g2d.drawString(formataLote(lot), alinhamentoEsquerda + espacoW + 19, alinhamentoTopo + fonteTamanhoInfo + espacoH)
         g2d.drawString(flowering, alinhamentoEsquerda + espacoW + 53, alinhamentoTopo + (fonteTamanhoInfo * 2) + (espacoH * 2))
-        g2d.drawString(sdf, alinhamentoEsquerda + espacoW + 86, alinhamentoTopo + (fonteTamanhoInfo * 3) + (espacoH * 3))
+        g2d.drawString(formataData(datePacking), alinhamentoEsquerda + espacoW + 86, alinhamentoTopo + (fonteTamanhoInfo * 3) + (espacoH * 3))
     }
 
     private fun campoValidade(g2d : PdfGraphics2D, validity : Date = Date()) {
@@ -89,9 +102,7 @@ class Criar {
 
         g2d.font = fonteNegritoCorpo2
 
-        val sdf = SimpleDateFormat(dataPadrao).format(validity)
-
-        g2d.drawString(sdf, alinhamentoEsquerda + espacoW, alinhamentoTopo + espacoH)
+        g2d.drawString(formataData(validity), alinhamentoEsquerda + espacoW, alinhamentoTopo + espacoH)
     }
 
     private fun campoPeso(
@@ -119,9 +130,17 @@ class Criar {
 
         g2d.font = fonteNegritoTitulo
 
-        g2d.drawString(grossWeight.toString(), alinhamentoEsquerda + espacoW + espacoEntreTexto + 80, alinhamentoTopo + espacoH + centralizacao)
-        g2d.drawString(netWeight.toString(), alinhamentoEsquerda + espacoW  + espacoEntreTexto + 65, alinhamentoTopo + espacoH + distancia + centralizacao)
+        g2d.drawString(
+                formataNumDecimal(grossWeight),
+                alinhamentoEsquerda + espacoW + espacoEntreTexto + 80,
+                alinhamentoTopo + espacoH + centralizacao
+        )
 
+        g2d.drawString(
+                formataNumDecimal(netWeight),
+                alinhamentoEsquerda + espacoW  + espacoEntreTexto + 65,
+                alinhamentoTopo + espacoH + distancia + centralizacao
+        )
     }
 
     private fun alteraCanvasDocumento(canvas: PdfContentByte, indice : Int, rotulo: Rotulo) {
@@ -167,7 +186,7 @@ class Criar {
     }
 
     fun pdfRotulo(rotulo: Rotulo, caminho : String = "", imagemFundo : Boolean = false) {
-        pdfRotuloDocumento(arrayListOf(rotulo, rotulo), caminho, imagemFundo).close()
+        pdfRotuloDocumento(arrayListOf(rotulo), caminho, imagemFundo).close()
     }
 
     fun pdfRotulos(rotulos: ArrayList<Rotulo>, caminho : String = "", imagemFundo : Boolean = false) {

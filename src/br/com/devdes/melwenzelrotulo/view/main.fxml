@@ -5,209 +5,158 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<HBox minHeight="620.0" prefHeight="630.0" prefWidth="800.0"
-      xmlns="http://javafx.com/javafx/8.0.121"
-      fx:controller="br.com.devdes.melwenzelrotulo.controller.Main"
-      xmlns:fx="http://javafx.com/fxml/1">
+<HBox minHeight="400.0" prefHeight="450.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.devdes.melwenzelrotulo.controller.Main">
     <padding>
-        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
     </padding>
     <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
         <HBox.margin>
-            <Insets bottom="4.0" top="4.0" fx:id="x8"/>
+            <Insets bottom="4.0" top="4.0" fx:id="x8" />
         </HBox.margin>
-        <Label text="Informações">
+        <Label text="Gerador de Rótulos - Mel Wenzel">
             <font>
-                <Font size="20.0" fx:id="x5"/>
+                <Font size="20.0" fx:id="x5" />
             </font>
         </Label>
         <Separator prefWidth="200.0">
             <VBox.margin>
-                <Insets bottom="8.0" top="8.0" fx:id="x2"/>
+                <Insets bottom="8.0" top="8.0" fx:id="x2" />
             </VBox.margin>
         </Separator>
         <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="NEVER">
             <Label text="Quantidade de Rótulos">
                 <VBox.margin>
-                    <Insets bottom="2.0" fx:id="x3"/>
+                    <Insets bottom="2.0" fx:id="x3" />
                 </VBox.margin>
             </Label>
-            <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0"
-                       promptText="Quantidade de Rótulos para Impressão" VBox.vgrow="ALWAYS">
+            <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Quantidade de Rótulos para Impressão" VBox.vgrow="ALWAYS">
                 <VBox.margin>
-                    <Insets bottom="4.0"/>
+                    <Insets bottom="4.0" />
                 </VBox.margin>
             </TextField>
             <HBox>
                 <VBox HBox.hgrow="ALWAYS">
                     <Label text="Lote (Lot):">
                         <VBox.margin>
-                            <Insets bottom="2.0"/>
+                            <Insets bottom="2.0" />
                         </VBox.margin>
                     </Label>
-                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0"
-                               promptText="Numeração do Lote" VBox.vgrow="ALWAYS">
+                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Numeração do Lote" VBox.vgrow="ALWAYS">
                         <VBox.margin>
-                            <Insets bottom="4.0"/>
+                            <Insets bottom="4.0" />
                         </VBox.margin>
                     </TextField>
                 </VBox>
 
                 <VBox HBox.hgrow="ALWAYS">
-                    <Label text="Floração (Flowering):" VBox.margin="$x3"/>
-                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0"
-                               promptText="Gênero de Floração" VBox.margin="$x1" VBox.vgrow="ALWAYS"/>
+                    <Label text="Floração (Flowering):" VBox.margin="$x3" />
+                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Gênero de Floração" VBox.vgrow="ALWAYS">
+                  <VBox.margin>
+                     <Insets bottom="4.0" fx:id="x9" />
+                  </VBox.margin></TextField>
                     <HBox.margin>
-                        <Insets left="8.0"/>
+                        <Insets left="8.0" />
                     </HBox.margin>
                 </VBox>
             </HBox>
 
-            <Label text="Data de Empacotamento (Date of Packing):" VBox.margin="$x3"/>
-            <DatePicker minHeight="30.0" prefHeight="30.0" prefWidth="400.0" promptText="Data de Empacotamento">
+            <Label text="Data de Empacotamento (Date of Packing):" VBox.margin="$x3" />
+            <DatePicker minHeight="30.0" prefHeight="30.0" prefWidth="600.0" promptText="Data de Empacotamento">
                 <VBox.margin>
-                    <Insets bottom="4.0"/>
+                    <Insets bottom="4.0" />
                 </VBox.margin>
             </DatePicker>
             <Separator prefWidth="200.0">
                 <VBox.margin>
-                    <Insets bottom="4.0" top="4.0" fx:id="x4"/>
+                    <Insets bottom="4.0" top="4.0" fx:id="x4" />
                 </VBox.margin>
             </Separator>
             <HBox>
                 <VBox HBox.hgrow="ALWAYS">
-                    <Label text="Peso Bruto (Gross Weight):" VBox.margin="$x3"/>
-                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Peso Bruto (Kg)"
-                               VBox.margin="$x1" VBox.vgrow="ALWAYS"/>
+                    <Label text="Peso Bruto (Gross Weight):" VBox.margin="$x3" />
+                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Peso Bruto (Kg)" VBox.vgrow="ALWAYS">
+                  <VBox.margin>
+                     <Insets bottom="4.0" fx:id="x10" />
+                  </VBox.margin></TextField>
                 </VBox>
                 <VBox HBox.hgrow="ALWAYS">
                     <Label text="Peso Líquido (Net Weight):">
                         <VBox.margin>
-                            <Insets bottom="2.0"/>
+                            <Insets bottom="2.0" />
                         </VBox.margin>
                     </Label>
-                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0"
-                               promptText="Peso Líquido (Kg)" VBox.vgrow="ALWAYS">
+                    <TextField minHeight="30.0" prefHeight="30.0" prefWidth="200.0" promptText="Peso Líquido (Kg)" VBox.vgrow="ALWAYS">
                         <VBox.margin>
-                            <Insets bottom="4.0" fx:id="x1"/>
+                            <Insets bottom="4.0" fx:id="x1" />
                         </VBox.margin>
                     </TextField>
                     <opaqueInsets>
-                        <Insets/>
+                        <Insets />
                     </opaqueInsets>
                     <HBox.margin>
-                        <Insets left="8.0"/>
+                        <Insets left="8.0" />
                     </HBox.margin>
                 </VBox>
             </HBox>
-            <Separator prefWidth="200.0" VBox.margin="$x4"/>
+            <Separator prefWidth="200.0" VBox.margin="$x4" />
             <Label text="Validade (Validity):">
                 <VBox.margin>
-                    <Insets bottom="2.0"/>
+                    <Insets bottom="2.0" />
                 </VBox.margin>
             </Label>
-            <DatePicker layoutX="10.0" layoutY="188.0" minHeight="30.0" prefHeight="30.0" prefWidth="400.0"
-                        promptText="Validade">
+            <DatePicker layoutX="10.0" layoutY="188.0" minHeight="30.0" prefHeight="30.0" prefWidth="600.0" promptText="Validade">
                 <VBox.margin>
-                    <Insets bottom="4.0"/>
+                    <Insets bottom="4.0" />
                 </VBox.margin>
             </DatePicker>
             <Separator prefWidth="200.0">
                 <padding>
-                    <Insets bottom="8.0" top="8.0"/>
+                    <Insets bottom="8.0" top="8.0" />
                 </padding>
             </Separator>
             <HBox alignment="CENTER_LEFT">
-                <Button minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" text="Limpar Campos">
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="24.0" text="Limpar Campos">
                     <HBox.margin>
-                        <Insets right="8.0"/>
+                        <Insets right="8.0" />
                     </HBox.margin>
                 </Button>
-                <Button minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" text="Montar"/>
-                <Circle fill="#cc0000" radius="8.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0">
-                    <HBox.margin>
-                        <Insets left="8.0"/>
-                    </HBox.margin>
-                </Circle>
+              <CheckBox mnemonicParsing="false" text="Incluir Imagem de Fundo">
+                  <font>
+                      <Font size="16.0" fx:id="x6" />
+                  </font>
+              </CheckBox>
                 <VBox.margin>
-                    <Insets bottom="8.0"/>
+                    <Insets bottom="8.0" />
                 </VBox.margin>
             </HBox>
         </VBox>
-        <Label font="$x5" text="Exportação"/>
         <Separator prefWidth="200.0">
             <VBox.margin>
-                <Insets bottom="8.0"/>
+                <Insets bottom="4.0" top="4.0" />
             </VBox.margin>
         </Separator>
-        <CheckBox mnemonicParsing="false" text="Incluir Relatório" VBox.margin="$x1">
-            <font>
-                <Font size="16.0" fx:id="x6"/>
-            </font>
-        </CheckBox>
-        <CheckBox font="$x6" mnemonicParsing="false" text="Incluir Relatório (Arquivo Interno)" VBox.margin="$x1"/>
-        <CheckBox font="$x6" mnemonicParsing="false" text="Incluir Relatório de Impressão" VBox.margin="$x1"/>
-        <Separator prefWidth="200.0">
-            <VBox.margin>
-                <Insets bottom="4.0" top="4.0"/>
-            </VBox.margin>
-        </Separator>
-        <HBox alignment="CENTER" prefWidth="200.0" VBox.vgrow="NEVER">
-            <MenuButton minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" text="Salvar Como">
-                <items>
-                    <MenuItem mnemonicParsing="false" text="PDF"/>
-                    <MenuItem mnemonicParsing="false" text="PDF (Página)"/>
-                    <MenuItem mnemonicParsing="false" text="PNG"/>
-                </items>
-            </MenuButton>
-            <Button minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" text="Salvar Arquivo">
+        <HBox alignment="CENTER_RIGHT" fillHeight="false" prefWidth="200.0" VBox.vgrow="SOMETIMES">
+         <Label prefHeight="27.0" prefWidth="216.0" text="Att. Thales Carvalho - 89 99988 9460">
+            <padding>
+               <Insets right="8.0" />
+            </padding>
+         </Label>
+            <ProgressBar maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="35.0" progress="0.0" HBox.hgrow="SOMETIMES">
+            <HBox.margin>
+               <Insets fx:id="x11" />
+            </HBox.margin></ProgressBar>
+            <Button minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" text="Salvar Arquivo" HBox.hgrow="ALWAYS">
                 <HBox.margin>
-                    <Insets left="8.0" fx:id="x7"/>
+                    <Insets left="8.0" fx:id="x7" />
                 </HBox.margin>
             </Button>
-            <ProgressBar maxWidth="300.0" minHeight="35.0" prefHeight="35.0" progress="0.0"
-                         HBox.hgrow="ALWAYS" HBox.margin="$x7"/>
         </HBox>
-        <Separator prefWidth="200.0">
-            <VBox.margin>
-                <Insets bottom="4.0" top="4.0"/>
-            </VBox.margin>
-        </Separator>
-    </VBox>
-    <Separator orientation="VERTICAL" prefHeight="200.0">
-        <HBox.margin>
-            <Insets left="8.0" right="8.0"/>
-        </HBox.margin>
-    </Separator>
-    <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="SOMETIMES">
-        <Label font="$x5" text="Pré-Visualização"/>
-        <Separator prefWidth="200.0">
-            <VBox.margin>
-                <Insets bottom="8.0" top="8.0"/>
-            </VBox.margin>
-        </Separator>
-        <ImageView fitHeight="264.9999694824219" fitWidth="379.9701437011474" pickOnBounds="true"
-                   preserveRatio="true">
-            <VBox.margin>
-                <Insets bottom="8.0"/>
-            </VBox.margin>
-            <Image url="@../assets/nada-selecionado.png"/>
-        </ImageView>
-        <Label font="$x5" text="Listagem"/>
-        <Separator prefWidth="200.0" VBox.margin="$x2"/>
-        <ListView prefHeight="200.0" prefWidth="383.0" VBox.vgrow="ALWAYS"/>
     </VBox>
 </HBox>
