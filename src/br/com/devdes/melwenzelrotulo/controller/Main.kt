@@ -12,7 +12,6 @@ import javafx.stage.FileChooser
 import javafx.stage.Stage
 import java.io.File
 import java.net.URL
-import java.time.LocalDate
 import java.time.OffsetDateTime
 import java.util.*
 import kotlin.collections.ArrayList
@@ -29,8 +28,6 @@ class Main : Initializable{
 
     @FXML var dpDataEmpacotamento : DatePicker? = null
     @FXML var dpValidade : DatePicker? = null
-
-    @FXML var lblDev : Label? = null
 
     @FXML var pbLoad : ProgressBar? = null
 
