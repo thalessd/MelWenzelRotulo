@@ -70,6 +70,7 @@ class Main : Initializable{
         tfQtdRotulo?.clear()
         tfLote?.clear()
         tfFloracao?.clear()
+        tfPesoBruto?.clear()
         tfPesoLiquido?.clear()
 
         dpDataEmpacotamento?.value = null
