@@ -8,11 +8,13 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox minHeight="400.0" prefHeight="450.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.devdes.melwenzelrotulo.controller.Main">
+<HBox minHeight="400.0" prefHeight="460.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.devdes.melwenzelrotulo.controller.Main">
     <padding>
         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
     </padding>
@@ -20,11 +22,21 @@
         <HBox.margin>
             <Insets bottom="4.0" top="4.0" fx:id="x8" />
         </HBox.margin>
-        <Label text="Gerador de Rótulos - Mel Wenzel">
-            <font>
-                <Font size="20.0" fx:id="x5" />
-            </font>
-        </Label>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <Label text="Gerador de Rótulos">
+                <font>
+                    <Font name="System Bold" size="18.0" fx:id="x5"/>
+                </font>
+                <HBox.margin>
+                    <Insets right="30.0"/>
+                </HBox.margin>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                <ImageView fitHeight="39.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../assets/logo-wenzel.png"/>
+                </ImageView>
+            </HBox>
+        </HBox>
         <Separator prefWidth="200.0">
             <VBox.margin>
                 <Insets bottom="8.0" top="8.0" fx:id="x2" />
@@ -143,16 +155,14 @@
             </VBox.margin>
         </Separator>
         <HBox alignment="CENTER_RIGHT" fillHeight="false" prefWidth="200.0" VBox.vgrow="SOMETIMES">
-         <Label fx:id="lblDev" prefHeight="27.0" prefWidth="216.0" text="Att. Thales Carvalho - 89 99988 9460">
-            <padding>
-               <Insets right="8.0" />
-            </padding>
-         </Label>
+            <ImageView fitHeight="305.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                <Image url="@../assets/devdes.png" />
+            </ImageView>
             <ProgressBar fx:id="pbLoad" maxWidth="1.7976931348623157E308" minHeight="-Infinity" opacity="0.0" prefHeight="35.0" progress="0.0" HBox.hgrow="SOMETIMES">
             <HBox.margin>
                <Insets fx:id="x11" />
             </HBox.margin></ProgressBar>
-            <Button fx:id="btnSalvarArquivo" minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" text="Salvar Arquivo" HBox.hgrow="ALWAYS">
+            <Button fx:id="btnSalvarArquivo" minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" text="Gerar Arquivo" HBox.hgrow="ALWAYS">
                 <HBox.margin>
                     <Insets left="8.0" fx:id="x7" />
                 </HBox.margin>
