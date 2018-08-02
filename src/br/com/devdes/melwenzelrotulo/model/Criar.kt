@@ -27,10 +27,16 @@ class Criar {
 
     private val fonteNegritoTitulo = Font(fonteNome, Font.BOLD, fonteTamanhoInfo + 10)
 
-    private val alinhamentoTopo = 273
-    private val alinhamentoEsquerda = 16
+    // ALINHAMENTO PARA IMPRESSÃO COM IMAGEM
+    private var alinhamentoTopo = 273
+    private var alinhamentoEsquerda = 16
 
     private val nomeDefault = "Rótulo - ${formataData(Date(), true)}.pdf"
+
+    private fun alteraAlinhamentoParaImpressao() {
+        alinhamentoTopo = 260
+        alinhamentoEsquerda = 10
+    }
 
     private fun formataLote(int: Int) : String {
         return int.toString().padStart(6, '0')
@@ -48,7 +54,7 @@ class Criar {
         return DecimalFormat("##,##0.00").format(float)
     }
 
-    private fun imagemBgParaAlinhamento(canvas : PdfContentByte) {
+    private fun imagemFundo(canvas : PdfContentByte) {
 
         val image = Image.getInstance(
                 this.javaClass.getResource("${ Util().pathPackage() }/assets/rotulo.png")
@@ -174,7 +180,10 @@ class Criar {
 
         for ((i, rotulo) in rotulos.withIndex()) {
 
-            if(imagemFundo) imagemBgParaAlinhamento(canvas)
+            // SE O ARQUIVO NÃO TIVER IMAGEM
+            // USA O ALINHAMENTO DE IMPRESSÃO
+            if(imagemFundo) imagemFundo(canvas)
+            else alteraAlinhamentoParaImpressao()
 
             alteraCanvasDocumento(canvas, i, rotulo)
 
