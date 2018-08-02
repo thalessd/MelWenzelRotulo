@@ -129,7 +129,10 @@ class Main : Initializable{
         rotulo.dataEmpacotamento = dataEmpacotamentoDate
         rotulo.validade = validadeDate
 
-        for (i in 1..quantidade) rotulos.add(rotulo)
+        for (i in 1..quantidade) {
+            if(i > 8) break // LIMITE DE QUANTIDADE PARA TESTE
+            rotulos.add(rotulo)
+        }
 
         return rotulos
     }
