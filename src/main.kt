@@ -17,7 +17,7 @@ class App : Application() {
                 javaClass.getResource("${ u.pathPackage() }/view/main.fxml")
         )
 
-        primaryStage?.title = "Gera Rótulo - Mel Wenzel"
+        primaryStage?.title = "Gerador de Rótulo - Wenzel Apicultura"
         primaryStage?.isResizable = false
         primaryStage?.scene = Scene(root)
         primaryStage?.icons?.addAll(
