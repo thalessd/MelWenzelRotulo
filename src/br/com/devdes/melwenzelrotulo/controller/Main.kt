@@ -160,7 +160,6 @@ class Main : Initializable{
 
         service.setOnSucceeded {
             exibeAlertaFinal()
-            limparCampos()
             pbLoad?.opacity = 0.0
             btnSalvarArquivo?.isDisable = false
             vbFormulario?.isDisable = false
