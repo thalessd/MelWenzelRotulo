@@ -41,7 +41,7 @@ class Criar {
     }
 
     private fun formataData(date: Date, paraArquivo : Boolean = false) : String {
-        return SimpleDateFormat(if(!paraArquivo) "dd/mm/yyyy" else "dd-mm-yyyy-HH-mm-ss").format(date)
+        return SimpleDateFormat(if(!paraArquivo) "dd/MM/yyyy" else "dd-MM-yyyy-HH-mm-ss").format(date)
     }
 
     private fun formataNumDecimal(float: Float) : String {
