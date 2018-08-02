@@ -25,15 +25,15 @@
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <Label text="Gerador de Rótulos">
                 <font>
-                    <Font name="System Bold" size="18.0" fx:id="x5"/>
+                    <Font name="System Bold" size="18.0" fx:id="x5" />
                 </font>
                 <HBox.margin>
-                    <Insets right="30.0"/>
+                    <Insets right="30.0" />
                 </HBox.margin>
             </Label>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                 <ImageView fitHeight="39.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@../assets/logo-wenzel.png"/>
+                    <Image url="@../assets/logo-wenzel.png" />
                 </ImageView>
             </HBox>
         </HBox>
@@ -136,10 +136,15 @@
             <HBox alignment="CENTER_LEFT">
                 <Button fx:id="btnLimpaCampo" minHeight="-Infinity" mnemonicParsing="false" prefHeight="24.0" text="Limpar Campos">
                     <HBox.margin>
-                        <Insets right="8.0" />
+                        <Insets />
                     </HBox.margin>
                 </Button>
-              <CheckBox fx:id="cbImagemFundo" mnemonicParsing="false" text="Incluir Imagem de Fundo">
+            <Separator orientation="VERTICAL" prefHeight="200.0">
+               <HBox.margin>
+                  <Insets left="8.0" right="8.0" />
+               </HBox.margin>
+            </Separator>
+              <CheckBox fx:id="cbImagemFundo" mnemonicParsing="false" text="Incluir Imagem do Rótulo">
                   <font>
                       <Font size="16.0" fx:id="x6" />
                   </font>
