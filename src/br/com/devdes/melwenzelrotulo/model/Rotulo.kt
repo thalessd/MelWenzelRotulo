@@ -9,4 +9,10 @@ class Rotulo {
     var pesoBruto : Float = 0.0f
     var pesoLiquido : Float = 0.0f
     var validade : Date = Date()
+
+    override fun toString(): String {
+        return "Rotulo(lote=$lote, floracao='$floracao', dataEmpacotamento=$dataEmpacotamento, pesoBruto=$pesoBruto, pesoLiquido=$pesoLiquido, validade=$validade)"
+    }
+
+
 }

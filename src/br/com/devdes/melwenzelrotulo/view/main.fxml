@@ -30,7 +30,7 @@
                 <Insets bottom="8.0" top="8.0" fx:id="x2" />
             </VBox.margin>
         </Separator>
-        <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="NEVER">
+        <VBox fx:id="vbFormulario" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="NEVER">
             <Label text="Quantidade de Rótulos">
                 <VBox.margin>
                     <Insets bottom="2.0" fx:id="x3" />
@@ -148,7 +148,7 @@
                <Insets right="8.0" />
             </padding>
          </Label>
-            <ProgressBar fx:id="pbLoad" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="35.0" progress="0.0" HBox.hgrow="SOMETIMES">
+            <ProgressBar fx:id="pbLoad" maxWidth="1.7976931348623157E308" minHeight="-Infinity" opacity="0.0" prefHeight="35.0" progress="0.0" HBox.hgrow="SOMETIMES">
             <HBox.margin>
                <Insets fx:id="x11" />
             </HBox.margin></ProgressBar>

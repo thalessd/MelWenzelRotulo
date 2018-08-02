@@ -30,6 +30,8 @@ class Criar {
     private val alinhamentoTopo = 273
     private val alinhamentoEsquerda = 16
 
+    private val nomeDefault = "Rótulo - ${formataData(Date(), true)}.pdf"
+
     private fun formataLote(int: Int) : String {
         return int.toString().padStart(6, '0')
     }
@@ -44,10 +46,6 @@ class Criar {
 
     private fun formataNumDecimal(float: Float) : String {
         return DecimalFormat("##,##0.00").format(float)
-    }
-
-    private fun nomeArquivo(rotulo: Rotulo) : String {
-        return "Rótulo - LOTE [${formataLote(rotulo.lote)}] - DATA DE CRIAÇÂO [${formataData(Date(), true)}].pdf"
     }
 
     private fun imagemBgParaAlinhamento(canvas : PdfContentByte) {
@@ -162,11 +160,12 @@ class Criar {
     private fun pdfRotuloDocumento(
             rotulos: ArrayList<Rotulo>,
             caminho : String,
-            imagemFundo : Boolean = false
+            imagemFundo : Boolean = false,
+            callback : Runnable = Runnable {  }
     ) : Document {
 
         val document = Document(paginaTamanho)
-        val writer = PdfWriter.getInstance(document, FileOutputStream(Paths.get(caminho, nomeArquivo(rotulos[0])).toFile()))
+        val writer = PdfWriter.getInstance(document, FileOutputStream(Paths.get(caminho).toFile()))
 
         document.open()
 
@@ -180,16 +179,22 @@ class Criar {
             alteraCanvasDocumento(canvas, i, rotulo)
 
             document.newPage()
+
+            callback.run()
         }
 
         return document
     }
 
-    fun pdfRotulo(rotulo: Rotulo, caminho : String = "", imagemFundo : Boolean = false) {
+    fun nomeArquivo(rotulo: Rotulo) : String {
+        return "Rótulo - LOTE [${formataLote(rotulo.lote)}] - DATA DE CRIAÇÂO [${formataData(Date(), true)}].pdf"
+    }
+
+    fun pdfRotulo(rotulo: Rotulo, caminho : String = nomeDefault, imagemFundo : Boolean = false) {
         pdfRotuloDocumento(arrayListOf(rotulo), caminho, imagemFundo).close()
     }
 
-    fun pdfRotulos(rotulos: ArrayList<Rotulo>, caminho : String = "", imagemFundo : Boolean = false) {
+    fun pdfRotulos(rotulos: ArrayList<Rotulo>, caminho : String = nomeDefault, imagemFundo : Boolean = false) {
         pdfRotuloDocumento(rotulos, caminho, imagemFundo).close()
     }
 
