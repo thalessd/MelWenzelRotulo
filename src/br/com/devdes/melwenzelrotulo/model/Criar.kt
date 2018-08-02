@@ -33,6 +33,7 @@ class Criar {
 
     private val nomeDefault = "Rótulo - ${formataData(Date(), true)}.pdf"
 
+    // CUIDA DE ALTERAR O ALINHAMENTO GLOBAL DOS TEXTOS
     private fun alteraAlinhamentoParaImpressao() {
         alinhamentoTopo = 260
         alinhamentoEsquerda = 10
