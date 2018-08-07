@@ -127,7 +127,7 @@ class Main : Initializable{
         rotulo.validade = validadeDate
 
         for (i in 1..quantidade) {
-            if(i > 8) break // LIMITE DE QUANTIDADE PARA TESTE
+            // if(i > 8) break // LIMITE DE QUANTIDADE PARA TESTE
             rotulos.add(rotulo)
         }
 
